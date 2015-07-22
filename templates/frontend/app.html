@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="budget_tracker">
+
+<head>
+
+    {% load djangular_tags %}
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Bootstrap Admin App + jQuery">
+   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+   <title>Budget tracker</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <!-- FONT AWESOME-->
+   <link rel="stylesheet" href="{{ STATIC_URL }}/vendor/fontawesome/css/font-awesome.min.css">
+   <!-- SIMPLE LINE ICONS-->
+   <link rel="stylesheet" href="{{ STATIC_URL }}/vendor/simple-line-icons/css/simple-line-icons.css">
+   <!-- ANIMATE.CSS-->
+   <!-- =============== PAGE VENDOR STYLES ===============-->
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+   <link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap.css" id="bscss">
+   <!-- =============== APP STYLES ===============-->
+   <link rel="stylesheet" href="{{ STATIC_URL }}/css/app.css" id="maincss">
+   <link rel="stylesheet" href="{{ STATIC_URL }}/css/theme-a.css" id="maincss">
+   <link rel="stylesheet" href="{{ STATIC_URL }}/vendor/angular-ui-select/dist/select.css">
+
+</head>
+
+<body class="layout-h">
+   <div class="wrapper">
+      <!-- top navbar-->
+      <header class="topnavbar-wrapper">
+         <!-- START Top Navbar-->
+         <nav role="navigation" class="navbar topnavbar">
+            <!-- START navbar header-->
+            <div class="navbar-header">
+               <a href="#/" class="navbar-brand">
+                  <div class="brand-logo">
+                     <img src="{{ STATIC_URL }}/img/logo.png" alt="App Logo" class="img-responsive">
+                  </div>
+                  <div class="brand-logo-collapsed">
+                     <img src="{{ STATIC_URL }}/img/logo-single.png" alt="App Logo" class="img-responsive">
+                  </div>
+               </a>
+            </div>
+
+            <!-- END navbar header-->
+            <!-- START Nav wrapper-->
+            <div class="nav-wrapper">
+               <!-- START Left navbar-->
+               <ul class="nav navbar-nav">
+                  <li><a href="/app/#/expenses" data-toggle="dropdown">My logs</a></li>
+                  <li><a href="/app/#/create-expense">Add expense</a>
+                  </li>
+       </ul>
+               <!-- END Left navbar-->
+               <!-- START Right Navbar-->
+               <ul class="nav navbar-nav navbar-right">
+                  <!-- Search icon-->
+                  <li>
+                     <a href="#" data-search-open="">
+                        <em class="icon-magnifier"></em>
+                     </a>
+                  </li>
+                  <!-- Fullscreen (only desktops)-->
+
+                  <!-- END Contacts menu-->
+               </ul>
+               <!-- END Right Navbar-->
+            </div>
+            <!-- END Nav wrapper-->
+            <!-- START Search form-->
+            <form role="search" action="search.html" class="navbar-form">
+               <div class="form-group has-feedback">
+                  <input type="text" placeholder="Type and hit enter ..." class="form-control">
+                  <div data-search-dismiss="" class="fa fa-times form-control-feedback"></div>
+               </div>
+               <button type="submit" class="hidden btn btn-default">Submit</button>
+            </form>
+            <!-- END Search form-->
+         </nav>
+         <!-- END Top Navbar-->
+      </header>
+
+      <!-- Main section-->
+      <section class="row">
+         <div class="content-wrapper" ng-view></div>
+      </section>
+      <!-- Page footer-->
+      <footer>
+         <span>&copy; 2015 - Angle</span>
+      </footer>
+   </div>
+   <!-- =============== VENDOR SCRIPTS ===============-->
+   <!-- MODERNIZR-->
+   <script src="{{ STATIC_URL }}/vendor/modernizr/modernizr.js"></script>
+   <!-- JQUERY-->
+   <script src="{{ STATIC_URL }}/vendor/jquery/dist/jquery.js"></script>
+   <!-- BOOTSTRAP-->
+   <script src="{{ STATIC_URL }}/vendor/bootstrap/dist/js/bootstrap.js"></script>
+   <script src="{{ STATIC_URL }}/vendor/moment/min/moment-with-locales.min.js"></script>
+   <!-- LOCALIZE-->
+   <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+   <!-- =============== APP SCRIPTS ===============-->
+   <script src="{{ STATIC_URL }}/vendor/angular/angular.min.js"></script>
+   <script src="{{ STATIC_URL }}/vendor/angular-ui-select/dist/select.js"></script>
+   <script src="{{ STATIC_URL }}/vendor/angular/angular-route.min.js"></script>
+   <script src="{{ STATIC_URL }}/vendor/angular/ui-bootstrap-tpls-0.13.0.min.js"></script>
+   <script src="{{ STATIC_URL }}/js/app/app.js"></script>
+
+</body>
+
+</html>

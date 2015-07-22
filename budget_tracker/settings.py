@@ -24,10 +24,16 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+AUTH_USER_MODEL = 'users.User'
+
 ALLOWED_HOSTS = []
-
-
-# Application definition
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -36,7 +42,17 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'djangular',
+
+    'apps.users',
+    'apps.activity',
+    'apps.tracking',
 )
+
+# Application definition
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,6 +68,7 @@ ROOT_URLCONF = 'budget_tracker.urls'
 
 WSGI_APPLICATION = 'budget_tracker.wsgi.application'
 
+LOGIN_REDIRECT_URL = '/app'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -79,5 +96,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
-STATIC_URL = '/static/'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)

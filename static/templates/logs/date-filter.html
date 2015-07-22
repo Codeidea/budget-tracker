@@ -1,0 +1,7 @@
+<div class="btn-group pull-right">
+    <button type="button" class="btn btn-link">Select range</button>
+    <button type="button" class="btn btn-link">Previous months</button>
+
+
+    <button ng-click="filter(button.date)" type="button" class="btn btn-default" ng-repeat="button in buttons">{{ button.text }}</button>
+</div>
